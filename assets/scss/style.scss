@@ -12,16 +12,14 @@ $susy: (
 	global-box-sizing: border-box,
 );
 
-<<<<<<< HEAD
-=======
+
+//clever centering trick from https://css-tricks.com/centering-css-complete-guide/
 %center {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
->>>>>>> ca7116bd05b98e6ad369a4a8bb31a698785c82dc
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -29,18 +27,7 @@ $susy: (
 .wrapper {
   postion: relative;
 }
-<<<<<<< HEAD
-//clever centering trick from https://css-tricks.com/centering-css-complete-guide/
-.iphone-6 {
-  width: 375px;
-  height: 667px;
-  border: 1px solid #999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-=======
+
 
 .fit-frame {
 	width: 100%;
@@ -122,6 +109,3 @@ $susy: (
 	width: 100px;
 	height: 100px;
 }
-
-
->>>>>>> ca7116bd05b98e6ad369a4a8bb31a698785c82dc

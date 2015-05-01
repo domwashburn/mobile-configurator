@@ -1,6 +1,14 @@
 /* determine rem value for functions */
 /* rem Function */
 /* rem Line Height */
+.app__frame, .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,20 +17,14 @@
 .wrapper {
   postion: relative; }
 
-.fit-frame {
+.fit-frame, .app__controls {
   width: 100%;
   float: left; }
 
 .app__frame {
   width: 375px;
   height: 667px;
-  border: 1px solid #999999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  border: 1px solid #999999; }
 
 .app__frame-inner {
   position: relative;
@@ -52,7 +54,26 @@
 .card__holder {
   width: auto;
   height: 100%;
-  background-color: #333333; }
+  background-color: #333333;
+  position: relative; }
+
+.card {
+  width: 225px;
+  height: 320px;
+  background-color: #e54fc2; }
+
+.app__button {
+  border-radius: 50%;
+  background-color: #cccccc;
+  float: left; }
+
+.button--small {
+  width: 80px;
+  height: 80px; }
+
+.button--large {
+  width: 110px;
+  height: 110px; }
 
 .test {
   background-color: #333333;

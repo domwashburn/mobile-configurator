@@ -12,6 +12,13 @@ $susy: (
 	global-box-sizing: border-box,
 );
 
+%center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -26,13 +33,10 @@ $susy: (
 }
 
 .app__frame {
+	@extend %center;
   width: 375px;
   height: 667px;
   border: 1px solid #999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   &-inner{ 
 	position: relative;
 	overflow: hidden;
@@ -68,6 +72,34 @@ $susy: (
 	width: auto;
 	height: 100%;
 	background-color: #333;
+	position: relative;
+}
+
+.card {
+	@extend %center;
+	width: 225px;
+	height: 320px;
+	background-color: #e54fc2;
+}
+.app__controls {
+	@extend .fit-frame;
+}
+.app__controls-primary {
+	display: block;
+	margin: 0 auto;
+}
+.app__button {
+	border-radius: 50%;
+	background-color: #CCCCCC;
+	float: left;
+}
+.button--small {
+	width: 80px;
+	height: 80px;
+}
+.button--large {
+	width: 110px;
+	height: 110px;
 }
 
 .test {

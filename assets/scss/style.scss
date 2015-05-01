@@ -3,6 +3,7 @@
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "susy";
+@import "mobile-configurator-01-embedded";
 
 $susy: (
 	columns: 12,
@@ -11,6 +12,7 @@ $susy: (
 	math: static,
 	global-box-sizing: border-box,
 );
+
 
 
 //clever centering trick from https://css-tricks.com/centering-css-complete-guide/
@@ -22,6 +24,10 @@ $susy: (
 }
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+.clearfix {
+	@include clearfix;
 }
 
 .wrapper {
@@ -94,6 +100,11 @@ $susy: (
 	border-radius: 50%;
 	background-color: #CCCCCC;
 	float: left;
+	position: relative;
+}
+.button__icon {
+	@extend %center;
+	font-size: 2rem;
 }
 .button--small {
 	width: 80px;

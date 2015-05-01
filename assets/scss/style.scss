@@ -92,27 +92,34 @@ $susy: (
 .app__controls {
 	@extend .fit-frame;
 }
-.app__controls-primary {
-	display: block;
+.app__controls--primary, .app__controls--secondary {
+	display: table;
 	margin: 0 auto;
+	overflow: visible;
 }
 .app__button {
 	border-radius: 50%;
-	background-color: #CCCCCC;
+	border: 2px solid #CCCCCC;
 	float: left;
 	position: relative;
 }
 .button__icon {
 	@extend %center;
-	font-size: 2rem;
+	color: #CCCCCC;
 }
 .button--small {
-	width: 80px;
-	height: 80px;
+	width: 4rem;
+	height: 4rem;
+	.button__icon {
+		font-size: 2rem;
+	}
 }
 .button--large {
-	width: 110px;
-	height: 110px;
+	width: 5rem;
+	height: 5rem;
+	.button__icon {
+		font-size: 3rem;
+	}
 }
 
 .test {

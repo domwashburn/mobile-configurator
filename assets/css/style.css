@@ -321,13 +321,10 @@
   left: 0; }
 
 .app__contents {
-  background-color: #f3f3f3;
+  background-color: #fafafa;
   padding-top: 23px;
   height: 100%;
   width: 100%; }
-
-.app__contents.keyboard-up {
-  padding-bottom: 262px; }
 
 .app__keyboard {
   position: absolute;
@@ -338,7 +335,11 @@
   width: auto;
   height: 100%;
   background-color: #333333;
-  position: relative; }
+  position: relative;
+  height: 430px; }
+
+.keyboard-up .card__holder {
+  height: 373px; }
 
 .card {
   width: 225px;

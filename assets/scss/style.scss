@@ -12,6 +12,16 @@ $susy: (
 	global-box-sizing: border-box,
 );
 
+<<<<<<< HEAD
+=======
+%center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+>>>>>>> ca7116bd05b98e6ad369a4a8bb31a698785c82dc
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -19,6 +29,7 @@ $susy: (
 .wrapper {
   postion: relative;
 }
+<<<<<<< HEAD
 //clever centering trick from https://css-tricks.com/centering-css-complete-guide/
 .iphone-6 {
   width: 375px;
@@ -29,3 +40,88 @@ $susy: (
   left: 50%;
   transform: translate(-50%, -50%);
 }
+=======
+
+.fit-frame {
+	width: 100%;
+	float: left;
+}
+
+.app__frame {
+	@extend %center;
+  width: 375px;
+  height: 667px;
+  border: 1px solid #999;
+  &-inner{ 
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+  }
+}
+
+.app__top-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.app__contents {
+	//@extend .fit-frame;
+	background-color: #F3F3F3;
+	padding-top: 23px;
+	height: 100%;
+	width: 100%;
+ 	&.keyboard-up {
+		padding-bottom: 262px;
+	}
+}
+
+.app__keyboard {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.card__holder {
+	width: auto;
+	height: 100%;
+	background-color: #333;
+	position: relative;
+}
+
+.card {
+	@extend %center;
+	width: 225px;
+	height: 320px;
+	background-color: #e54fc2;
+}
+.app__controls {
+	@extend .fit-frame;
+}
+.app__controls-primary {
+	display: block;
+	margin: 0 auto;
+}
+.app__button {
+	border-radius: 50%;
+	background-color: #CCCCCC;
+	float: left;
+}
+.button--small {
+	width: 80px;
+	height: 80px;
+}
+.button--large {
+	width: 110px;
+	height: 110px;
+}
+
+.test {
+	background-color: #333;
+	width: 100px;
+	height: 100px;
+}
+
+
+>>>>>>> ca7116bd05b98e6ad369a4a8bb31a698785c82dc

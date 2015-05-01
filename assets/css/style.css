@@ -288,6 +288,9 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
+body {
+  background-color: #c2c2c2; }
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -298,7 +301,8 @@
   *zoom: 1; }
 
 .wrapper {
-  postion: relative; }
+  postion: relative;
+  background-color: #333333; }
 
 .fit-frame, .app__controls {
   width: 100%;
@@ -306,8 +310,7 @@
 
 .app__frame {
   width: 375px;
-  height: 667px;
-  border: 1px solid #999999; }
+  height: 667px; }
 
 .app__frame-inner {
   position: relative;
@@ -353,7 +356,7 @@
 
 .app__button {
   border-radius: 50%;
-  border: 2px solid #cccccc;
+  background-color: #eeeeee;
   float: left;
   position: relative; }
 

@@ -1,4 +1,62 @@
 /* determine rem value for functions */
 /* rem Function */
 /* rem Line Height */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.wrapper {
+  postion: relative; }
+
+.fit-frame {
+  width: 100%;
+  float: left; }
+
+.app__frame {
+  width: 375px;
+  height: 667px;
+  border: 1px solid #999999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.app__frame-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+
+.app__top-bar {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.app__contents {
+  background-color: #f3f3f3;
+  padding-top: 23px;
+  height: 100%;
+  width: 100%; }
+
+.app__contents.keyboard-up {
+  padding-bottom: 262px; }
+
+.app__keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.card__holder {
+  width: auto;
+  height: 100%;
+  background-color: #333333; }
+
+.test {
+  background-color: #333333;
+  width: 100px;
+  height: 100px; }
+
 /*# sourceMappingURL=style.css.map */

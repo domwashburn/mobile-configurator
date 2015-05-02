@@ -345,10 +345,19 @@ body {
 .card__holder {
   min-height: 320px; }
 
+.card {
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.card__image {
+  height: 100%; }
+
 .card__image {
   height: 100%;
-  opacity: 0.3;
-  top: 0; }
+  min-height: 320px;
+  min-width: 230px; }
 
 .app__controls-holder {
   height: 272px;

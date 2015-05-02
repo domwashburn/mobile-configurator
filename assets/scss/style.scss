@@ -104,15 +104,16 @@ body {
 	//background-color: #e54fc2;
 }
 .card {
-	
 	height: 100%;
-	@include backface-visibility(hidden);
+	
 }
 .card__face {
+	@include backface-visibility(hidden);
 }
 .card__image {
 	@extend %horizontal-center;
 	height: 100%;
+	@include backface-visibility(hidden);
 }
 .card__image {
 	height: 100%;

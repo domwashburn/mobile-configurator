@@ -1,8 +1,8 @@
 //using TweenLite.set() takes care of all vendor-prefixes
-TweenLite.set(".card__holder", {perspective:1500});
+TweenLite.set(".card__holder", {perspective:2500});
 TweenLite.set(".card", {transformStyle:"preserve-3d"});
-TweenLite.set(".card--back", {rotationY:-180});
-TweenLite.set([".back", ".front"], {backfaceVisibility:"hidden"});
+TweenLite.set(".back", {rotationY:-180});
+//TweenLite.set([".back", ".front"], {backfaceVisibility:"hidden"});
 
 $(".button--flip.is-front").hover(
   function() {

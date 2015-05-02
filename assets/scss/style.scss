@@ -87,23 +87,21 @@ body {
 	left: 0;
 }
 
-.card__holder {
+.editor {
 	width: auto;
-	height: 100%;
-	background-color: #333;
+	//background-color: #333;
 	position: relative;
-	height: 430px;
+	min-height: 430px;
 	.keyboard-up & {
 		height: 373px;
 	}
 }
 
-.card {
+.card__holder {
 	@extend %vertical-center;
 	@extend .fit-frame;
-	//width: 225px;
 	min-height: 320px;
-	background-color: #e54fc2;
+	//background-color: #e54fc2;
 }
 .card__image {
 	@extend %horizontal-center;
@@ -112,8 +110,8 @@ body {
 	top: 0;
 }
 .app__controls-holder {
-	//@extend .fit-frame;
 	height: 272px;
+	padding-top: 2rem;
 	.keyboard-up & {
 		display: none;
 	}

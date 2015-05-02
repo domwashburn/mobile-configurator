@@ -274,7 +274,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-.card {
+.card__holder {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -304,7 +304,7 @@ body {
   postion: relative;
   background-color: #333333; }
 
-.fit-frame, .card {
+.fit-frame, .card__holder {
   width: 100%;
   float: left; }
 
@@ -334,19 +334,16 @@ body {
   bottom: 0;
   left: 0; }
 
-.card__holder {
+.editor {
   width: auto;
-  height: 100%;
-  background-color: #333333;
   position: relative;
-  height: 430px; }
+  min-height: 430px; }
 
-.keyboard-up .card__holder {
+.keyboard-up .editor {
   height: 373px; }
 
-.card {
-  min-height: 320px;
-  background-color: #e54fc2; }
+.card__holder {
+  min-height: 320px; }
 
 .card__image {
   height: 100%;
@@ -354,7 +351,8 @@ body {
   top: 0; }
 
 .app__controls-holder {
-  height: 272px; }
+  height: 272px;
+  padding-top: 2rem; }
 
 .keyboard-up .app__controls-holder {
   display: none; }

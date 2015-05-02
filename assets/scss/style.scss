@@ -90,12 +90,24 @@ body {
 
 .card {
 	@extend %center;
-	width: 225px;
+	//width: 225px;
 	height: 320px;
 	background-color: #e54fc2;
 }
+.card__image {
+	height: 100%;
+	opacity: .3;
+	top: 0;
+}
+.app__controls-holder {
+	//@extend .fit-frame;
+	height: 272px;
+	.keyboard-up & {
+		display: none;
+	}
+}
 .app__controls {
-	@extend .fit-frame;
+	//@extend %center;
 }
 .app__controls--primary, .app__controls--secondary {
 	display: table;
@@ -104,17 +116,21 @@ body {
 }
 .app__button {
 	border-radius: 50%;
-	background-color: #EEEEEE;
+	background-color: #959595;
 	float: left;
 	position: relative;
 }
 .button__icon {
 	@extend %center;
-	color: #CCCCCC;
+	color: #767676;
 }
 .button--small {
 	width: 4rem;
 	height: 4rem;
+	margin: 0 1rem 0 0;
+	&:last-child {
+		margin-right: 0;
+	}
 	.button__icon {
 		font-size: 2rem;
 	}
@@ -122,6 +138,10 @@ body {
 .button--large {
 	width: 5rem;
 	height: 5rem;
+	margin: 0 1rem 0 0;
+	&:last-child {
+		margin-right: 0;
+	}
 	.button__icon {
 		font-size: 3rem;
 	}

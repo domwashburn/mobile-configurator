@@ -266,13 +266,27 @@
 .icon-edit:before {
   content: '\e84e'; }
 
-.app__frame, .card, .button__icon {
+.app__frame, .button__icon {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+.card {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%); }
+
+.card__image {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
 
 body {
   background-color: #c2c2c2; }
@@ -290,7 +304,7 @@ body {
   postion: relative;
   background-color: #333333; }
 
-.fit-frame {
+.fit-frame, .card {
   width: 100%;
   float: left; }
 
@@ -331,7 +345,7 @@ body {
   height: 373px; }
 
 .card {
-  height: 320px;
+  min-height: 320px;
   background-color: #e54fc2; }
 
 .card__image {

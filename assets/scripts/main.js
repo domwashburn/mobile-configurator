@@ -2,13 +2,15 @@
 TweenLite.set(".card__holder", {perspective:2500});
 TweenLite.set(".card", {transformStyle:"preserve-3d"});
 TweenLite.set(".back", {rotationY:-180});
-//TweenLite.set([".back", ".front"], {backfaceVisibility:"hidden"});
 
-$(".button--flip.is-front").hover(
+$(".button--flip").on('click',
   function() {
-    TweenLite.to($(".card__holder").find(".card"), 1.2, {rotationY:180, ease:Back.easeOut});
-  },
-  function() {
-    TweenLite.to($(".card__holder").find(".card"), 1.2, {rotationY:0, ease:Back.easeOut});  
+  	if( $(this).hasClass("is-front") ) {
+		TweenLite.to($(".card__holder").find(".card"), 1.2, {rotationY:180, ease:Back.easeOut}),
+    	$(this).removeClass("is-front").addClass("is-back");
+	} else if( $(this).hasClass("is-back") ) {
+		TweenLite.to($(".card__holder").find(".card"), 1.2, {rotationY:0, ease:Back.easeOut}),
+    	$(this).removeClass("is-back").addClass("is-front");
+	}
   }
 );

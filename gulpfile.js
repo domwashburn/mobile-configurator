@@ -37,12 +37,12 @@ var paths = {
 var appFiles = {
     html: paths.html.src + '*.tpl.html',
     styles: paths.styles.src + '**/**/**/*.scss',
-    scripts: [paths.scripts.src + '**/*.js']
+    scripts: [paths.scripts.src + '**/**/*.js']
 };
 var watchAppFiles = {
     html: paths.html.dest + '*.html',
     styles: paths.styles.dest + '*.css',
-    scripts: [paths.scripts.dest + '**/*.js']
+    scripts: [paths.scripts.dest + '**/**/*.js']
 }
 
 
@@ -112,7 +112,8 @@ gulp.task('browser-sync', function() {
 /* GULP TASKS */
 gulp.task('watch', function (){
     gulp.watch([appFiles.styles], ['sass']);
-    gulp.watch([watchAppFiles.scripts], ['js-lint', 'js-concat']);
+    gulp.watch([appFiles.scripts], ['js-lint', 'js-concat']);
+    gulp.watch([appFiles.scripts]);
 });
 
 gulp.task('default', ['watch', 'sass', 'js-concat', 'browser-sync']);

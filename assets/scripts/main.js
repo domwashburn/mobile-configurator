@@ -7,6 +7,7 @@ TweenLite.set(".app__keyboard", {y:0, yPercent:100});
 
 var fieldsHeight = $(".text-fields").height();
 
+
 $(".button--flip").on('click',
   function() {
   	if( $(this).hasClass("is-front") ) {
@@ -31,9 +32,9 @@ $(".button--text").on('click',
   		TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
   		TweenLite.to($(".card__holder"), .3, { opacity:0, height:0,   ease: Power3. easeInOut}).delay(.7),
   		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}).delay(.7),
-  		$(".app__keyboard").removeClass("is-hidden").addClass("is-visible"),
-  		//$(".card__holder").removeClass("is-visible").addClass("is-hidden"),
-  		$(".text-fields").removeClass("is-hidden").addClass("is-visible");
+  		TweenLite.set($(".app__keyboard").removeClass("is-hidden").addClass("is-visible")),
+  		TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(2),
+  		TweenLite.set($(".text-fields").removeClass("is-hidden").addClass("is-visible"));
   	}
   }
 );

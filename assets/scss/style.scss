@@ -129,6 +129,7 @@ body {
 .card__add-image {
 	@extend %dead-center;
 	font-size: 3rem;
+	color: $light-grey;
 }
 .app__controls-holder {
 	height: 272px;

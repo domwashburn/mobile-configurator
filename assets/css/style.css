@@ -266,20 +266,13 @@
 .icon-edit:before {
   content: '\e84e'; }
 
-.app__frame, .button__icon {
+.app__frame, .card__add-image, .button__icon {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
-
-.card__holder {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%); }
 
 .card__image {
   position: absolute;
@@ -336,7 +329,6 @@ body {
 
 .editor {
   width: auto;
-  background-color: #333333;
   position: relative;
   min-height: 430px; }
 
@@ -347,27 +339,27 @@ body {
   height: 100%; }
 
 .card__holder {
-  min-height: 320px;
-  background-color: #e54fc2; }
+  margin: 15% 0; }
 
 .card {
-  height: 100%; }
+  margin: 0 auto; }
 
 .card__face {
   -webkit-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  position: absolute; }
 
 .card__image {
   height: 100%;
   -webkit-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-.card__image {
-  height: 100%;
+  backface-visibility: hidden;
   min-height: 320px;
   min-width: 230px; }
+
+.card__add-image {
+  font-size: 3rem; }
 
 .app__controls-holder {
   height: 272px;

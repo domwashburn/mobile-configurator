@@ -188,6 +188,11 @@ body {
 		color: $exp-green;
 	}
 }
+.button--confirm {
+	@extend .button--approve;
+	width: 4rem;
+	height: 2rem;
+}
 .button__icon {
 	@extend %dead-center;
 	.is-disabled & {
@@ -216,6 +221,10 @@ body {
 	.button__icon {
 		font-size: 3rem;
 	}
+}
+
+.is-hidden {
+	display: none;
 }
 
 .test {

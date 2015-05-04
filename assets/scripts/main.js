@@ -2,6 +2,9 @@
 TweenLite.set(".card__holder", {perspective:2500});
 TweenLite.set(".card", {transformStyle:"preserve-3d"});
 TweenLite.set(".back", {rotationY:-180});
+TweenLite.set(".text-fields", {opacity:0});
+TweenLite.set(".app__keyboard", {y:0, yPercent:100});
+
 
 $(".button--flip").on('click',
   function() {
@@ -18,6 +21,36 @@ $(".button--flip").on('click',
 	}
   }
 );
+$(".button--text").on('click',
+  function() {
+  	if ($(this).hasClass("is-editing")) {
+
+  	} else if ($(this).hasClass("is-not-editing")) {
+  		TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut}),
+  		TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
+  		TweenLite.to($(".card__holder"), .3, { opacity:0,   ease: Power3. easeInOut}).delay(.7),
+  		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}).delay(.7),
+  		$(".app__keyboard").removeClass("is-hidden").addClass("is-visible"),
+  		$(".card__holder").removeClass("is-visible").addClass("is-hidden"),
+  		$(".text-fields").removeClass("is-hidden").addClass("is-visible");
+  	}
+  }
+);
+$(".button--confirm-text").on('click',
+  function() {
+  		
+  		TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8),
+  		TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut});
+  		
+
+  		// if ($(".app__keyboard").hasClass("is-visible")) {
+  		// 	alert("yay");
+  		// };
+  		
+
+  }
+);
+
 var cardHeight = $(".card__image").height();
 var cardWidth = $(".card__image").width();
 cardSize = function () {

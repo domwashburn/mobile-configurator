@@ -29,7 +29,7 @@
                         <img class="fit-frame app__top-bar" src="assets/images/chrome/top-bar.png" alt="">
                         <div class="app__contents ">
                             <div class="editor ">
-                                <div class="card__holder">
+                                <div class="card__holder is-visible">
                                     <div class="card">
                                         <div class="card__face card--front front"> 
                                             <img src="assets/images/card-01--blank.jpg" alt="" class="card__image ">
@@ -43,14 +43,35 @@
                                         
                                     </div>
                                 </div>
+                                <div class="text-fields is-hidden">
+                                    <div class="text-fields--front">
+                                        <p class="section-title">Front</p>
+                                        <label for="name" class="text-fields__label">Name</label>
+                                        <input class="text-fields__text" id="name" type="text">
+                                        <label for="school" class="text-fields__label">School</label>
+                                        <input class="text-fields__text" id="school" type="text">
+                                    </div>
+                                    <div class="text-fields--back">
+                                        <p class="section-title">Back</p>
+                                        <label for="name" class="text-fields__label">Name</label>
+                                        <input class="text-fields__text" id="name" type="text">
+                                        <label for="school" class="text-fields__label">School</label>
+                                        <input class="text-fields__text" id="school" type="text">
+                                    </div>
+                                    <div class="button--confirm button--confirm-text">
+                                        <i class="icon-check"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
                             </div>
                             <!-- <div class="test"></div> -->
-                            <div class="app__controls-holder">
+                            <div class="app__controls-holder is-visible">
                                 <div class="app__controls">
                                 <div class="app__controls--primary clearfix">
                                     <div class="app__button button--large button--image is-active"><i class="button__icon icon-picture"></i></div>
                                     <div class="app__button button--large button--flip is-front"><i class="button__icon icon-docs"></i></div>
-                                    <div class="app__button button--large button--text is-active"><i class="button__icon icon-pencil"></i></div>
+                                    <div class="app__button button--large button--text is-active is-not-editing"><i class="button__icon icon-pencil"></i></div>
                                 </div>
                                 <div class="app__controls--secondary clearfix">
                                     <div class="app__button button--small button--back"><i class="button__icon icon-left-1"></i></div>
@@ -60,10 +81,10 @@
 
                             </div>
                                                     </div>
-                        <!-- <div class="app__keyboard">
+                        <div class="app__keyboard is-hidden">
                             <img class="fit-frame" src="assets/images/chrome/predictive-text-hidden.png" alt="">
                             <img class="fit-frame" src="assets/images/chrome/keyboard-dark.png" alt="">
-                        </div> -->
+                        </div>
                     </div>
                     
                 </div>

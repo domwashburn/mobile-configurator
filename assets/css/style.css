@@ -406,14 +406,18 @@ body {
 .button--back .button__icon {
   color: #6f45c5; }
 
-.button--approve {
+.button--approve, .button--confirm {
   border-color: #58d653; }
 
-.button--approve:hover {
+.button--approve:hover, .button--confirm:hover {
   background-color: rgba(88, 214, 83, 0.2); }
 
-.button--approve .button__icon {
+.button--approve .button__icon, .button--confirm .button__icon {
   color: #58d653; }
+
+.button--confirm {
+  width: 4rem;
+  height: 2rem; }
 
 .is-disabled .button__icon {
   color: #d9d9d9; }
@@ -439,6 +443,9 @@ body {
 
 .button--large .button__icon {
   font-size: 3rem; }
+
+.is-hidden {
+  display: none; }
 
 .test {
   background-color: #333333;

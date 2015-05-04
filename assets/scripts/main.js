@@ -27,10 +27,10 @@ $(".button--text").on('click',
   function() {
   	if ($(this).hasClass("is-editing")) {
 
-  	} else if ($(this).hasClass("is-not-editing")) {
+  	} else if ($(this).hasClass("is-not-editing") && $(this).hasClass("is-active") ) {
   		TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut}),
   		TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
-  		TweenLite.to($(".card__holder"), .3, { opacity:0, height:0,   ease: Power3. easeInOut}).delay(.7),
+  		TweenLite.to($(".card__holder"), .3, { opacity:0,/* height:0,*/   ease: Power3. easeInOut}).delay(.7),
   		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}).delay(.7),
   		TweenLite.set($(".app__keyboard").removeClass("is-hidden").addClass("is-visible")),
   		TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(2),
@@ -40,9 +40,12 @@ $(".button--text").on('click',
 );
 $(".button--confirm-text").on('click',
   function() {
-  		TweenLite.to($(".card__holder"), .3, { opacity:1, height: fieldsHeight,   ease: Power3. easeInOut}).delay(1),
+      TweenLite.set($(".card__holder").removeClass("is-hidden").addClass("is-visible")).delay(.5),
+  		TweenLite.to($(".card__holder"), 1, { opacity:1, /*height: fieldsHeight,*/   ease: Power3. easeInOut}).delay(1),
+      TweenLite.set($(".text-fields").removeClass("is-visible").addClass("is-hidden")).delay(.5),
   		TweenLite.to($(".text-fields"), .2, { opacity:0, height:0,  ease: Power3. easeInOut}),
   		TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8),
+
   		TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut});
   		
 

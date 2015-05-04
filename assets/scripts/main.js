@@ -5,6 +5,7 @@ TweenLite.set(".back", {rotationY:-180});
 TweenLite.set(".text-fields", {opacity:0});
 TweenLite.set(".app__keyboard", {y:0, yPercent:100});
 
+var fieldsHeight = $(".text-fields").height();
 
 $(".button--flip").on('click',
   function() {
@@ -28,17 +29,18 @@ $(".button--text").on('click',
   	} else if ($(this).hasClass("is-not-editing")) {
   		TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut}),
   		TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
-  		TweenLite.to($(".card__holder"), .3, { opacity:0,   ease: Power3. easeInOut}).delay(.7),
+  		TweenLite.to($(".card__holder"), .3, { opacity:0, height:0,   ease: Power3. easeInOut}).delay(.7),
   		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}).delay(.7),
   		$(".app__keyboard").removeClass("is-hidden").addClass("is-visible"),
-  		$(".card__holder").removeClass("is-visible").addClass("is-hidden"),
+  		//$(".card__holder").removeClass("is-visible").addClass("is-hidden"),
   		$(".text-fields").removeClass("is-hidden").addClass("is-visible");
   	}
   }
 );
 $(".button--confirm-text").on('click',
   function() {
-  		
+  		TweenLite.to($(".card__holder"), .3, { opacity:1, height: fieldsHeight,   ease: Power3. easeInOut}).delay(1),
+  		TweenLite.to($(".text-fields"), .2, { opacity:0, height:0,  ease: Power3. easeInOut}),
   		TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8),
   		TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut});
   		

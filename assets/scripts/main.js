@@ -42,18 +42,10 @@ resizeCheck = function () {
 	});
 };
 
-$(".button--image").on('click', function(){
-	$(".card__image").height(450);
-	resizeCheck();
-});
-
-	// .resize( function() {
-	// 	cardHeight = $(".card__image").height();
-	// 	cardWidth = $(".card__image").width();
-	// 	console.log( cardWidth + " --- " + cardHeight);
-	// 	console.log("not equal");
-	// });
-
-	//}
+// $(".button--image").on('click', function(){
+// 	$(".card__image").height(450);
+// 	resizeCheck();
+// });
 
 cardSize();
+resizeCheck();

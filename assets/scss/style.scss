@@ -13,7 +13,12 @@ $susy: (
 	global-box-sizing: border-box,
 );
 
-
+$exp-pink: #E043B9;
+$exp-red: #DE0F3E;
+$exp-green: #58D653;
+$exp-teal: #15BCD2;
+$exp-purple: #6F45C5;
+$light-grey: #D9D9D9;
 
 //clever centering trick from https://css-tricks.com/centering-css-complete-guide/
 %dead-center {
@@ -89,11 +94,14 @@ body {
 
 .editor {
 	width: auto;
-	//background-color: #333;
+	background-color: #333;
 	position: relative;
 	min-height: 430px;
 	.keyboard-up & {
 		height: 373px;
+	}
+	&--full {
+		height: 100%;
 	}
 }
 
@@ -101,7 +109,7 @@ body {
 	@extend %vertical-center;
 	@extend .fit-frame;
 	min-height: 320px;
-	//background-color: #e54fc2;
+	background-color: #e54fc2;
 }
 .card {
 	height: 100%;
@@ -137,14 +145,53 @@ body {
 }
 .app__button {
 	border-radius: 50%;
-	background-color: #959595;
+	//background-color: #959595;
+	border-width: 2px;
+	border-style: solid;
 	float: left;
 	position: relative;
+	&.is-disabled {
+		background-color: transparent;
+		border-color: $light-grey;
+		&:hover {
+			background-color: rgba($light-grey,0.2);
+		}
+	}
+}
+.button--image, .button--text, .button--flip {
+	border-color:$exp-teal;
+	&:hover {
+		background-color: rgba($exp-teal,0.2);
+	}
+	.button__icon {
+		color: $exp-teal;
+	}
+}
+.button--back {
+	border-color: $exp-purple;
+	&:hover {
+		background-color: rgba($exp-purple,0.2);
+	}
+	.button__icon {
+		color: $exp-purple;
+	}
+}
+.button--approve {
+	border-color: $exp-green;
+	&:hover {
+		background-color: rgba($exp-green,0.2);
+	}
+	.button__icon {
+		color: $exp-green;
+	}
 }
 .button__icon {
 	@extend %dead-center;
-	color: #767676;
+	.is-disabled & {
+		color: $light-grey;
+	}
 }
+
 .button--small {
 	width: 4rem;
 	height: 4rem;

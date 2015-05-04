@@ -336,14 +336,19 @@ body {
 
 .editor {
   width: auto;
+  background-color: #333333;
   position: relative;
   min-height: 430px; }
 
 .keyboard-up .editor {
   height: 373px; }
 
+.editor--full {
+  height: 100%; }
+
 .card__holder {
-  min-height: 320px; }
+  min-height: 320px;
+  background-color: #e54fc2; }
 
 .card {
   height: 100%; }
@@ -378,12 +383,47 @@ body {
 
 .app__button {
   border-radius: 50%;
-  background-color: #959595;
+  border-width: 2px;
+  border-style: solid;
   float: left;
   position: relative; }
 
-.button__icon {
-  color: #767676; }
+.app__button.is-disabled {
+  background-color: transparent;
+  border-color: #d9d9d9; }
+
+.app__button.is-disabled:hover {
+  background-color: rgba(217, 217, 217, 0.2); }
+
+.button--image, .button--text, .button--flip {
+  border-color: #15bcd2; }
+
+.button--image:hover, .button--text:hover, .button--flip:hover {
+  background-color: rgba(21, 188, 210, 0.2); }
+
+.button--image .button__icon, .button--text .button__icon, .button--flip .button__icon {
+  color: #15bcd2; }
+
+.button--back {
+  border-color: #6f45c5; }
+
+.button--back:hover {
+  background-color: rgba(111, 69, 197, 0.2); }
+
+.button--back .button__icon {
+  color: #6f45c5; }
+
+.button--approve {
+  border-color: #58d653; }
+
+.button--approve:hover {
+  background-color: rgba(88, 214, 83, 0.2); }
+
+.button--approve .button__icon {
+  color: #58d653; }
+
+.is-disabled .button__icon {
+  color: #d9d9d9; }
 
 .button--small {
   width: 4rem;

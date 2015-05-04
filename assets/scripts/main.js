@@ -3,6 +3,8 @@ TweenLite.set(".card__holder", {perspective:2500});
 TweenLite.set(".card", {transformStyle:"preserve-3d"});
 TweenLite.set(".back", {rotationY:-180});
 TweenLite.set(".text-fields", {opacity:0});
+TweenLite.set(".text-fields__input-group", {opacity:0, y: 0, yPercent:-150, scale: 0.95});
+//TweenLite.set(".text-fields__label", {opacity:0, y: 0, yPercent:-100});
 TweenLite.set(".app__keyboard", {y:0, yPercent:100});
 
 var fieldsHeight = $(".text-fields").height();
@@ -31,10 +33,11 @@ $(".button--text").on('click',
   		TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut}),
   		TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
   		TweenLite.to($(".card__holder"), .3, { opacity:0,/* height:0,*/   ease: Power3. easeInOut}).delay(.7),
-  		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}).delay(.7),
+  		TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}),
   		TweenLite.set($(".app__keyboard").removeClass("is-hidden").addClass("is-visible")),
-  		TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(2),
-  		TweenLite.set($(".text-fields").removeClass("is-hidden").addClass("is-visible"));
+  		TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(1),
+  		TweenLite.set($(".text-fields").removeClass("is-hidden").addClass("is-visible")),
+      TweenMax.staggerTo($(".text-fields__input-group"), .4, { opacity:1, yPercent: 0, scale: 1,  ease: Power3. easeOut}, .35).delay();
   	}
   }
 );
@@ -42,18 +45,14 @@ $(".button--confirm-text").on('click',
   function() {
       TweenLite.set($(".card__holder").removeClass("is-hidden").addClass("is-visible")).delay(.5),
   		TweenLite.to($(".card__holder"), 1, { opacity:1, /*height: fieldsHeight,*/   ease: Power3. easeInOut}).delay(1),
-      TweenLite.set($(".text-fields").removeClass("is-visible").addClass("is-hidden")).delay(.5),
-  		TweenLite.to($(".text-fields"), .2, { opacity:0, height:0,  ease: Power3. easeInOut}),
+      
+      TweenLite.to($(".text-fields"), 0, { opacity:0, height:0,  ease: Power3. easeInOut}),
+  		
   		TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8),
 
-  		TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut});
-  		
-
-  		// if ($(".app__keyboard").hasClass("is-visible")) {
-  		// 	alert("yay");
-  		// };
-  		
-
+  		TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut}),
+      TweenMax.staggerTo($(".text-fields__input-group"), .4, { opacity:0, yPercent: 0, scale: .9,  ease: Power3. easeOut}, .35);
+      TweenLite.set($(".text-fields").removeClass("is-visible").addClass("is-hidden"));
   }
 );
 

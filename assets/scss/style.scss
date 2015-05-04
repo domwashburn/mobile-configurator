@@ -131,6 +131,13 @@ body {
 	font-size: 3rem;
 	color: $light-grey;
 }
+.text-fields {
+	@extend .fit-frame;
+}
+.text-fields__text, .text-fields__label {
+	display: block;
+	width: 100%;
+}
 .app__controls-holder {
 	height: 272px;
 	padding-top: 2rem;

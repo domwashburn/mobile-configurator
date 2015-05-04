@@ -297,7 +297,7 @@ body {
   postion: relative;
   background-color: #333333; }
 
-.fit-frame, .card__holder {
+.fit-frame, .card__holder, .text-fields {
   width: 100%;
   float: left; }
 
@@ -361,6 +361,10 @@ body {
 .card__add-image {
   font-size: 3rem;
   color: #d9d9d9; }
+
+.text-fields__text, .text-fields__label {
+  display: block;
+  width: 100%; }
 
 .app__controls-holder {
   height: 272px;

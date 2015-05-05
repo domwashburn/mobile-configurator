@@ -2,6 +2,7 @@
 require 'compass'
 require 'susy'
 require 'breakpoint'
+require 'modular-scale'
 require 'compass/import-once/activate'
 
 # Set this to the root of your project when deployed:

@@ -3,6 +3,7 @@
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "susy";
+@import "modular-scale";
 @import "mobile-configurator-01-embedded";
 
 $susy: (
@@ -34,6 +35,9 @@ $exp-green: #58D653;
 $exp-teal: #15BCD2;
 $exp-purple: #6F45C5;
 $light-grey: #D9D9D9;
+
+$ms-base: 1rem;
+$ms-ratio: $major-third;
 
 //clever centering trick from https://css-tricks.com/centering-css-complete-guide/
 %dead-center {
@@ -111,11 +115,11 @@ body {
 }
 .product-gallery {
 	padding: 0 15px;
-	margin-top: gutters()/2;
+	margin-top: gutters($gallery)/2;
 }
 .product-gallery__item {
 	@include span(1 of $gallery);
-	margin-bottom: gutters();
+	margin-bottom: gutters($gallery);
 	&:nth-child(3n) {
 		@include span(1 of $gallery last);
 	}
@@ -164,11 +168,23 @@ body {
 	color: $light-grey;
 }
 .text-fields {
-	@extend .fit-frame;
+	margin: 0 15px;
+	height: 381px;
+	overflow: scroll;
 }
 .text-fields__text, .text-fields__label {
 	display: block;
 	width: 100%;
+}
+.text-fields__text {
+	background-color: #fff;
+	border: 1px solid $exp-teal;
+	border-radius: 3px;
+	font-size: ms(1);
+	padding: ms(-2) ms(-1);
+	&:focus {
+		border-width: 2px;
+	}
 }
 .app__controls-holder {
 	height: 272px;

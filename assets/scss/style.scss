@@ -13,6 +13,21 @@ $susy: (
 	global-box-sizing: border-box,
 );
 
+$gallery: (
+	columns: 3,
+	container: 355px,
+	gutters: 1/6,
+	math: fixed,
+	global-box-sizing: border-box,
+);
+
+$images: (
+	columns: 4,
+	gutters: 1/3,
+	math: fluid,
+	global-box-sizing: border-box,
+);
+
 $exp-pink: #E043B9;
 $exp-red: #DE0F3E;
 $exp-green: #58D653;
@@ -84,12 +99,29 @@ body {
 	padding-top: 23px;
 	height: 100%;
 	width: 100%;
+	&.gallery-view {
+		overflow: scroll;
+	}
 }
 
 .app__keyboard {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
+.product-gallery {
+	padding: 0 15px;
+	margin-top: gutters()/2;
+}
+.product-gallery__item {
+	@include span(1 of $gallery);
+	margin-bottom: gutters();
+	&:nth-child(3n) {
+		@include span(1 of $gallery last);
+	}
+}
+.product-gallery__thumb {
+	width: 100%;
 }
 
 .editor {

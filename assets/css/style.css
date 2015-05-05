@@ -322,10 +322,31 @@ body {
   height: 100%;
   width: 100%; }
 
+.app__contents.gallery-view {
+  overflow: scroll; }
+
 .app__keyboard {
   position: absolute;
   bottom: 0;
   left: 0; }
+
+.product-gallery {
+  padding: 0 15px;
+  margin-top: 10px; }
+
+.product-gallery__item {
+  width: 30%;
+  float: left;
+  margin-right: 5%;
+  margin-bottom: 20px; }
+
+.product-gallery__item:nth-child(3n) {
+  width: 30%;
+  float: right;
+  margin-right: 0; }
+
+.product-gallery__thumb {
+  width: 100%; }
 
 .editor {
   width: auto;

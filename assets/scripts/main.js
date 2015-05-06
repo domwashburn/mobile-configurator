@@ -35,6 +35,7 @@ $(".the-image").on('click',
   function() {
       hideImageSelect();
       $(".card--front .card__image").attr("src", "assets/images/card-image.jpg");
+      $(".card__add-image").addClass("is-hidden");
   }
 );
 $(".button--text").on('click',

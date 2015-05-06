@@ -3,7 +3,8 @@ TweenLite.set(".card__holder", {perspective:2500});
 TweenLite.set(".card", {transformStyle:"preserve-3d"});
 TweenLite.set(".back", {rotationY:-180});
 TweenLite.set(".text-fields", {opacity:0});
-TweenLite.set(".text-fields__input-group", {opacity:0, y: 0, yPercent:-150, scale: 0.95});
+TweenLite.set(".text-fields__input-group", {opacity:0, scale: 0.8});
+TweenLite.set("image-gallery", {opacity:0});
 //TweenLite.set(".text-fields__label", {opacity:0, y: 0, yPercent:-100});
 TweenLite.set(".app__keyboard", {y:0, yPercent:100});
 
@@ -25,36 +26,85 @@ $(".button--flip").on('click',
 	}
   }
 );
+$(".button--image").on('click',
+  function() {
+      showImageSelect();
+  }
+);
+$(".the-image").on('click',
+  function() {
+      hideImageSelect();
+      $(".card--front .card__image").attr("src", "assets/images/card-image.jpg");
+  }
+);
 $(".button--text").on('click',
   function() {
   	if ($(this).hasClass("is-not-editing") && $(this).hasClass("is-active") ) {
-      showTextFields();
+      showTextEditor();
   	}
   }
 );
 $(".button--confirm-text").on('click', function() {
-  $(".card__holder").removeClass("is-hidden").addClass("is-visible");
-  hideTextFields();
+  hideTextEditor();
   $(".card--front .card__image").attr("src", "assets/images/card-done.jpg");
   $(".text-fields").removeClass("is-visible").addClass("is-hidden");
+  $(".button--approve").attr("href", "done.html");
 });
-
+var showCard = function() {
+  $(".card__holder").removeClass("is-hidden").addClass("is-visible");
+  TweenLite.to($(".card__holder"), 1, { opacity:1, /*height: fieldsHeight,*/   ease: Power3. easeInOut}).delay(1)
+};
+var hideCard = function() {
+  TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(1),
+  TweenLite.to($(".card__holder"), .3, { opacity:0,/* height:0,*/   ease: Power3. easeInOut}).delay(.7)
+};
+var showAppControls = function() {
+  $(".app__controls").removeClass("is-hidden").addClass("is-visible");
+  TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8)
+};
+var hideAppControls = function() {
+  TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut})
+};
 var showTextFields = function() {
-  TweenLite.to($(".app__controls"), 1, { opacity:0,  ease:Power3.easeOut}),
   TweenLite.to($(".app__keyboard"), 1.2, {yPercent: 0,   ease: Power3. easeInOut}),
-  TweenLite.to($(".card__holder"), .3, { opacity:0,/* height:0,*/   ease: Power3. easeInOut}).delay(.7),
   TweenLite.to($(".text-fields"), 2, { opacity:1,   ease: Power3. easeInOut}),
   TweenLite.set($(".app__keyboard").removeClass("is-hidden").addClass("is-visible")),
-  TweenLite.set($(".card__holder").removeClass("is-visible").addClass("is-hidden")).delay(1),
   TweenLite.set($(".text-fields").removeClass("is-hidden").addClass("is-visible")),
-  TweenMax.staggerTo($(".text-fields__input-group"), .4, { opacity:1, yPercent: 0, scale: 1,  ease: Power3. easeOut}, .35).delay();
-}
+  TweenMax.staggerTo($(".text-fields__input-group"), .6, { opacity:1, scale: 1,  ease: Power2. easeOut}, .2).delay();
+};
 var hideTextFields = function() {
-  TweenLite.to($(".card__holder"), 1, { opacity:1, /*height: fieldsHeight,*/   ease: Power3. easeInOut}).delay(1),
-  TweenLite.to($(".app__controls"), 2, { opacity:1,  ease: Power3 .easeOut}).delay(.8),
   TweenLite.to($(".app__keyboard"), 1.2, { yPercent: 100, ease: Power3. easeInOut}),
-  TweenMax.staggerTo($(".text-fields__input-group"), .4, { opacity:0, yPercent: 0, scale: .9,  ease: Power3. easeOut}, .35),
-  TweenLite.to($(".text-fields"), 0, { opacity: 0, height:0,  ease: Power3. easeInOut});
+  TweenMax.staggerTo($(".text-fields__input-group"), .6, { opacity:0, scale: .8,  ease: Power2. easeOut}, .2),
+  TweenLite.to($(".text-fields"), 0, { opacity: 0,  ease: Power3. easeInOut});
+};
+var showImageGallery = function() {
+  TweenLite.to($(".image-gallery"), 2, { opacity:1,   ease: Power3. easeInOut}),
+  TweenLite.set($(".image-gallery").removeClass("is-hidden").addClass("is-visible"))
+};
+var hideImageGallery = function() {
+  TweenLite.set($(".image-gallery").removeClass("is-visible").addClass("is-hidden")),
+  TweenLite.to($(".image-gallery"), 2, { opacity:0,   ease: Power3. easeInOut});
+};
+
+var showTextEditor = function() {
+  hideCard();
+  hideAppControls();
+  showTextFields();
+}
+var hideTextEditor = function() {
+  showCard();
+  showAppControls();
+  hideTextFields();
+}
+var showImageSelect = function() {
+  hideCard();
+  hideAppControls();
+  showImageGallery();
+}
+var hideImageSelect = function() {
+  showCard();
+  showAppControls();
+  hideImageGallery();
 }
 
 var cardHeight = $(".card__image").height();

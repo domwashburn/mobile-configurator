@@ -49,7 +49,7 @@ $(".button--confirm-text").on('click', function() {
   hideTextEditor();
   $(".card--front .card__image").attr("src", "assets/images/card-done.jpg");
   $(".text-fields").removeClass("is-visible").addClass("is-hidden");
-  $(".button--approve").attr("href", "done.html");
+  $(".button--approve").attr("href", "#");
 });
 var showCard = function() {
   $(".card__holder").removeClass("is-hidden").addClass("is-visible");

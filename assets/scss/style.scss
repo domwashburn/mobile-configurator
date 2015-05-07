@@ -24,7 +24,7 @@ $gallery: (
 
 $images: (
 	columns: 4,
-	gutters: 1/3,
+	gutters: 1/10,
 	math: fluid,
 	global-box-sizing: border-box,
 );
@@ -113,21 +113,31 @@ body {
 	bottom: 0;
 	left: 0;
 }
-.product-gallery {
+.product-gallery, .image-gallery {
 	padding: 0 15px;
 	margin-top: gutters($gallery)/2;
 }
 .product-gallery__item {
 	@include span(1 of $gallery);
 	margin-bottom: gutters($gallery);
-	&:nth-child(3n) {
+
+&:nth-child(3n) {
 		@include span(1 of $gallery last);
 	}
 }
 .product-gallery__thumb {
-	width: 100%;
+	border: 1px solid $light-grey;
 }
 
+.product-gallery__thumb, .image-gallery__thumb {
+	width: 100%;
+}
+.image-gallery__item {
+	@include span(1 of $images);
+	&:nth-child(4n) {
+		@include span(1 of $images last);
+	}
+}
 .editor {
 	width: auto;
 	//background-color: #333;
@@ -172,19 +182,33 @@ body {
 	height: 381px;
 	overflow: scroll;
 }
+.section-title {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: ms(2);
+	color: darken($light-grey, 15%);
+	margin-bottom: ms(-1);
+}
+.text-fields__label {
+	color: darken($light-grey, 5%);
+	font-family: Arial, sans-serif;
+	text-transform: lowercase;
+	padding-bottom: rem(4); 
+}
 .text-fields__text, .text-fields__label {
 	display: block;
 	width: 100%;
 }
 .text-fields__text {
 	background-color: #fff;
-	border: 1px solid $exp-teal;
+	border: 1px solid $light-grey;
 	border-radius: 3px;
-	font-size: ms(1);
+	font-size: ms(0);
 	padding: ms(-2) ms(-1);
 	margin-bottom: ms(0);
 	&:focus {
-		border-width: 2px;
+		border: 2px solid rgba($exp-teal, .8);
+		padding: rem(9.2333) rem(11.8);
 	}
 }
 .app__controls-holder {
@@ -255,10 +279,15 @@ body {
 	display: block;
 	color: darken($exp-green, 5%);
 	padding: ms(-1) 0;
+	margin-top: ms(2);
 	margin-bottom: ms(2);
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+
 }
 .button--confirm__icon:before {
 	line-height: 1;
+	margin-left: ms(-2);
 }
 .button__icon {
 	@extend %dead-center;
